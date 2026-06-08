@@ -1,0 +1,67 @@
+/* .box {
+  background: white;
+  width: 80vw;
+  height: 2px;
+  margin: 100px 0;
+  display: flex;
+}
+
+.vertical {
+  height: 90px;
+  width: 1px;
+  background-color: white;
+  margin: 0 120px;
+}
+
+.vertical-title {
+  position: relative;
+  top: 35px;
+  width: 150px;
+  font-size: 14px;
+}
+
+.vertical-desc {
+  position: relative;
+  top: 40px;
+  color: gray;
+  width: 150px;
+  font-size: 11px;
+}
+
+.logos {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  position: relative;
+  top: -47px;
+  left: -25px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.footer {
+  display: flex;
+  padding: 23px 122px;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: #0e0e1a;
+ 
+}
+
+.footer ul{
+    list-style: none;
+
+}
+
+.footer > div{
+    width: 223px;
+}
+footer .footer-rights{
+    text-align: center;
+    color: gray;
+    padding: 12px 0;
+
+} */

@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services - Rajan Portfolio</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:rgb(0,0,33);
+            color:white;
+            opacity:0;
+            transition:1s;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            height:80px;
+            background:rgb(18,18,62);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+
+        nav .left{
+            font-size:1.5rem;
+            font-weight:bold;
+        }
+
+        nav ul{
+            display:flex;
+        }
+
+        nav ul li{
+            list-style:none;
+            margin:0 20px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+            font-size:15px;
+        }
+
+        nav ul li a:hover{
+            color:rgb(170,107,228);
+            text-shadow:0 0 10px rgb(170,107,228);
+        }
+
+        /* SERVICES SECTION */
+
+        .services-section{
+            padding:80px 10%;
+            text-align:center;
+        }
+
+        .services-section h1{
+            font-size:3rem;
+            color:rgb(170,107,228);
+            margin-bottom:15px;
+        }
+
+        .services-section p{
+            color:gray;
+            margin-bottom:50px;
+        }
+
+        .services-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        /* SERVICE CARD */
+
+        .service-card{
+            background:rgb(18,18,62);
+            padding:35px;
+            border-radius:25px;
+            transition:0.4s;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 0 15px rgba(170,107,228,0.2);
+        }
+
+        .service-card:hover{
+            transform:translateY(-12px);
+            box-shadow:0 0 30px rgb(170,107,228);
+        }
+
+        .service-icon{
+            font-size:3.5rem;
+            margin-bottom:20px;
+        }
+
+        .service-card h2{
+            margin-bottom:15px;
+            color:rgb(170,107,228);
+        }
+
+        .service-card p{
+            color:#d6d6d6;
+            line-height:1.8;
+            margin-bottom:25px;
+        }
+
+        /* BUTTON */
+
+        .btn{
+            display:inline-block;
+            padding:12px 28px;
+            background:rgb(170,107,228);
+            color:white;
+            text-decoration:none;
+            border-radius:12px;
+            transition:0.4s;
+            font-weight:500;
+        }
+
+        .btn:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 20px rgb(170,107,228);
+            background:rgb(140,80,210);
+        }
+
+        /* COUNTER SECTION */
+
+        .counter-section{
+            margin-top:90px;
+            display:flex;
+            justify-content:center;
+            gap:40px;
+            flex-wrap:wrap;
+        }
+
+        .counter-box{
+            background:rgb(18,18,62);
+            padding:35px;
+            border-radius:20px;
+            width:230px;
+            transition:0.4s;
+            box-shadow:0 0 15px rgba(170,107,228,0.2);
+        }
+
+        .counter-box:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 25px rgb(170,107,228);
+        }
+
+        .counter{
+            font-size:2.7rem;
+            color:rgb(170,107,228);
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:rgb(18,18,62);
+            margin-top:90px;
+            padding:55px 20px 25px;
+            text-align:center;
+            border-top:2px solid rgb(170,107,228);
+        }
+
+        .footer-content h2{
+            color:rgb(170,107,228);
+            margin-bottom:10px;
+            font-size:2rem;
+        }
+
+        .footer-content p{
+            color:#d6d6d6;
+            margin-bottom:25px;
+        }
+
+        /* SOCIAL ICONS */
+
+        .social-links{
+            margin-bottom:30px;
+        }
+
+        .social-links a{
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            border:2px solid rgb(170,107,228);
+            color:rgb(170,107,228);
+            text-decoration:none;
+            margin:0 8px;
+            font-size:20px;
+            transition:0.4s;
+        }
+
+        .social-links a:hover{
+            background:rgb(170,107,228);
+            color:white;
+            transform:translateY(-8px) scale(1.1);
+            box-shadow:0 0 25px rgb(170,107,228);
+        }
+
+        /* FOOTER LINKS */
+
+        .footer-links{
+            margin-bottom:25px;
+        }
+
+        .footer-links a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            transition:0.3s;
+            font-size:15px;
+        }
+
+        .footer-links a:hover{
+            color:rgb(170,107,228);
+        }
+
+        /* COPYRIGHT */
+
+        .footer-bottom{
+            color:gray;
+            font-size:14px;
+            border-top:1px solid rgba(255,255,255,0.1);
+            padding-top:20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                height:auto;
+                padding:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+                margin-top:10px;
+            }
+
+            .services-section h1{
+                font-size:2.2rem;
+            }
+
+            .counter-section{
+                gap:20px;
+            }
+
+            .footer-links{
+                display:flex;
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .social-links a{
+                margin:8px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="left">
+                Rajan Portfolio
+            </div>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.htm">About</a></li>
+
+                <li><a href="services.html" class="active-link">Services</a></li>
+
+                <li><a href="projects.html">Projects</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- SERVICES -->
+
+    <section class="services-section">
+
+        <h1>My Services</h1>
+
+        <p>
+            Professional services I provide as a web developer.
+        </p>
+
+        <div class="services-container">
+
+            <!-- CARD 1 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">💻</div>
+
+                <h2>Web Development</h2>
+
+                <p>
+                    Responsive and modern websites using
+                    HTML, CSS, JavaScript and modern UI design.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    Hire Me
+                </a>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">🎨</div>
+
+                <h2>Web Design</h2>
+
+                <p>
+                    Clean UI/UX designs with animations,
+                    hover effects and responsive layouts.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">⚡</div>
+
+                <h2>Frontend Projects</h2>
+
+                <p>
+                    Interactive frontend websites with
+                    typing effects, sliders and animations.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    Contact
+                </a>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">📱</div>
+
+                <h2>Responsive Design</h2>
+
+                <p>
+                    Mobile-friendly websites working perfectly
+                    on desktop, tablet and smartphone devices.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    Start Project
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COUNTERS -->
+
+        <div class="counter-section">
+
+            <div class="counter-box">
+
+                <div class="counter" data-target="15">
+                    0
+                </div>
+
+                <p>Projects Completed</p>
+
+            </div>
+
+            <div class="counter-box">
+
+                <div class="counter" data-target="10">
+                    0
+                </div>
+
+                <p>Happy Clients</p>
+
+            </div>
+
+            <div class="counter-box">
+
+                <div class="counter" data-target="2">
+                    0
+                </div>
+
+                <p>Years Learning</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>Rajan Portfolio</h2>
+
+            <p>
+                Frontend Developer | Web Designer | Java Learner
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="social-links">
+
+                <a href="https://www.facebook.com/rajan.oli.75286" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/rajan444706" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/@rajanolwee" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://github.com" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://tiktok.com/@rajanoli.spark1" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+            <!-- FOOTER LINKS -->
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.htm">About</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="projects.html">Projects</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+
+            <div class="footer-bottom">
+
+                Copyright © 2026 Rajan Portfolio |
+                All Rights Reserved
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // PAGE LOAD EFFECT
+
+        window.addEventListener("load",()=>{
+
+            document.body.style.opacity="1";
+
+        });
+
+        // COUNTER ANIMATION
+
+        const counters =
+            document.querySelectorAll(".counter");
+
+        counters.forEach(counter => {
+
+            counter.innerText = "0";
+
+            const updateCounter = () => {
+
+                const target =
+                    +counter.getAttribute("data-target");
+
+                const current =
+                    +counter.innerText;
+
+                const increment =
+                    target / 100;
+
+                if(current < target){
+
+                    counter.innerText =
+                        `${Math.ceil(current + increment)}`;
+
+                    setTimeout(updateCounter,30);
+
+                } else {
+
+                    counter.innerText = target;
+
+                }
+            };
+
+            updateCounter();
+
+        });
+
+        // NAVBAR GLOW
+
+        window.addEventListener("scroll",function(){
+
+            const nav =
+                document.querySelector("nav");
+
+            nav.style.boxShadow =
+                window.scrollY > 20
+                ? "0 0 20px rgb(170,107,228)"
+                : "none";
+
+        });
+
+    </script>
+
+</body>
+
+
