@@ -8,357 +8,258 @@
 
     <title>About Me - Rajan Portfolio</title>
 
-    <!-- GOOGLE FONT -->
-
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- FONT AWESOME -->
-
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Page-Specific Styles -->
     <style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-            background:rgb(0,0,33);
-            color:white;
-            opacity:0;
-            transition:1s;
-        }
-
-        /* NAVBAR */
-
-        nav{
-            display:flex;
-            justify-content:space-around;
-            align-items:center;
-            height:80px;
-            background-color:rgb(18,18,62);
-            position:sticky;
-            top:0;
-            z-index:100;
-        }
-
-        nav .left{
-            font-size:1.5rem;
-            font-weight:bold;
-        }
-
-        nav ul{
-            display:flex;
-        }
-
-        nav ul li{
-            list-style:none;
-            margin:0 20px;
-        }
-
-        nav ul li a{
-            text-decoration:none;
-            color:white;
-            transition:0.3s;
-            font-size:15px;
-        }
-
-        nav ul li a:hover{
-            color:rgb(170,107,228);
-            text-shadow:0 0 10px rgb(170,107,228);
-        }
-
         /* ABOUT SECTION */
-
-        .about-section{
-            min-height:90vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding:70px 20px;
+        .about-section {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 5%;
         }
 
-        .about-container{
-            width:100%;
-            max-width:1100px;
-            background:rgb(18,18,62);
-            padding:50px;
-            border-radius:25px;
-            box-shadow:0 0 25px rgba(170,107,228,0.4);
+        .about-container {
+            width: 100%;
+            max-width: 1100px;
+            background: rgb(18, 18, 62);
+            padding: clamp(30px, 4vw, 50px);
+            border-radius: 25px;
+            box-shadow: 0 0 25px rgba(170, 107, 228, 0.4);
         }
 
-        .about-content{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:50px;
-            flex-wrap:wrap;
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
         /* IMAGE */
-
-        .about-image{
-            flex:1;
-            text-align:center;
+        .about-image {
+            flex: 1;
+            text-align: center;
+            min-width: 280px;
         }
 
-        .about-image img{
-            width:320px;
-            height:320px;
-            object-fit:cover;
-            border-radius:50%;
-            border:4px solid rgb(170,107,228);
-            box-shadow:0 0 25px rgb(170,107,228);
-            transition:0.4s;
+        .about-image img {
+            width: min(320px, 70vw);
+            height: min(320px, 70vw);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgb(170, 107, 228);
+            box-shadow: 0 0 25px rgb(170, 107, 228);
+            transition: 0.4s;
         }
 
-        .about-image img:hover{
-            transform:scale(1.05);
+        .about-image img:hover {
+            transform: scale(1.05);
         }
 
         /* TEXT */
-
-        .about-text{
-            flex:1;
+        .about-text {
+            flex: 1;
+            min-width: 280px;
         }
 
-        .about-text h1{
-            font-size:3rem;
-            margin-bottom:20px;
-            color:rgb(170,107,228);
+        .about-text h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+            color: rgb(170, 107, 228);
         }
 
-        .about-text h3{
-            font-size:1.5rem;
-            margin-bottom:20px;
+        .about-text h3 {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 20px;
         }
 
-        .about-text p{
-            line-height:1.8;
-            color:#d6d6d6;
-            margin-bottom:20px;
-        }
-
-        /* BUTTON */
-
-        .btn{
-            display:inline-block;
-            margin-top:25px;
-            padding:14px 28px;
-            background:rgb(170,107,228);
-            color:white;
-            text-decoration:none;
-            border-radius:12px;
-            transition:0.4s;
-            font-weight:500;
-        }
-
-        .btn:hover{
-            background:rgb(140,80,210);
-            transform:translateY(-5px);
-            box-shadow:0 0 20px rgb(170,107,228);
+        .about-text p {
+            line-height: 1.8;
+            color: #d6d6d6;
+            margin-bottom: 20px;
         }
 
         /* SKILLS */
-
-        .skills{
-            margin-top:50px;
+        .skills {
+            margin-top: 50px;
         }
 
-        .skills h2{
-            margin-bottom:25px;
-            color:rgb(170,107,228);
-            text-align:center;
-            font-size:2rem;
+        .skills h2 {
+            margin-bottom: 25px;
+            color: rgb(170, 107, 228);
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
 
-        .skill{
-            margin-bottom:25px;
+        .skill {
+            margin-bottom: 25px;
         }
 
-        .skill-name{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:10px;
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
 
-        .skill-bar{
-            width:100%;
-            height:12px;
-            background:#222;
-            border-radius:20px;
-            overflow:hidden;
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background: #222;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .skill-fill{
-            height:100%;
-            width:0;
-            background:rgb(170,107,228);
-            border-radius:20px;
-            transition:2s;
+        .skill-fill {
+            height: 100%;
+            width: 0;
+            background: rgb(170, 107, 228);
+            border-radius: 20px;
+            transition: width 2s ease;
         }
 
-        /* FOOTER */
-
-        footer{
-            background:rgb(18,18,62);
-            margin-top:80px;
-            padding:55px 20px 25px;
-            text-align:center;
-            border-top:2px solid rgb(170,107,228);
-        }
-
-        .footer-content h2{
-            color:rgb(170,107,228);
-            margin-bottom:10px;
-            font-size:2rem;
-        }
-
-        .footer-content p{
-            color:#d6d6d6;
-            margin-bottom:25px;
-        }
-
-        /* SOCIAL ICONS */
-
-        .footer-social{
-            margin-bottom:30px;
-        }
-
-        .footer-social a{
-            display:inline-flex;
-            justify-content:center;
-            align-items:center;
-            width:50px;
-            height:50px;
-            border-radius:50%;
-            border:2px solid rgb(170,107,228);
-            color:rgb(170,107,228);
-            text-decoration:none;
-            margin:0 8px;
-            font-size:20px;
-            transition:0.4s;
-        }
-
-        .footer-social a:hover{
-            background:rgb(170,107,228);
-            color:white;
-            transform:translateY(-8px) scale(1.1);
-            box-shadow:0 0 25px rgb(170,107,228);
-        }
-
-        /* FOOTER LINKS */
-
-        .footer-links{
-            margin-bottom:25px;
-        }
-
-        .footer-links a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-            transition:0.3s;
-        }
-
-        .footer-links a:hover{
-            color:rgb(170,107,228);
-        }
-
-        /* COPYRIGHT */
-
-        .footer-bottom{
-            color:gray;
-            font-size:14px;
-            border-top:1px solid rgba(255,255,255,0.1);
-            padding-top:20px;
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width:900px){
-
-            .about-content{
-                flex-direction:column;
-                text-align:center;
+        /* 768px - 991px */
+        @media (max-width: 991px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .about-text h1{
-                font-size:2.5rem;
+            .about-text h1 {
+                font-size: 2.5rem;
             }
 
-            .about-image img{
-                width:250px;
-                height:250px;
-            }
-
-            nav{
-                flex-direction:column;
-                height:auto;
-                padding:20px;
-            }
-
-            nav ul{
-                flex-wrap:wrap;
-                justify-content:center;
-                margin-top:10px;
-            }
-
-            .footer-links{
-                display:flex;
-                flex-direction:column;
-                gap:15px;
-            }
-
-            .footer-social a{
-                margin:8px;
+            .about-image img {
+                width: min(250px, 60vw);
+                height: min(250px, 60vw);
             }
         }
 
+        /* 576px - 767px */
+        @media (max-width: 767px) {
+            .about-section {
+                padding: 50px 4%;
+            }
+        }
+
+        /* 400px - 575px */
+        @media (max-width: 575px) {
+            .about-section {
+                padding: 40px 4%;
+            }
+
+            .about-container {
+                padding: 25px;
+            }
+
+            .about-text h1 {
+                font-size: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* 320px - 399px */
+        @media (max-width: 399px) {
+            .about-section {
+                padding: 30px 3%;
+            }
+
+            .about-container {
+                padding: 20px;
+            }
+
+            .about-image {
+                min-width: unset;
+            }
+
+            .about-image img {
+                width: min(200px, 55vw);
+                height: min(200px, 55vw);
+            }
+
+            .about-text {
+                min-width: unset;
+            }
+
+            .about-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .about-text h3 {
+                font-size: 1rem;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .skills h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* 1400px+ */
+        @media (min-width: 1400px) {
+            .about-section {
+                padding: 70px 6%;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .about-section {
+                padding: 70px 8%;
+            }
+        }
     </style>
 
 </head>
 
 <body>
 
+    <!-- Nav Overlay (mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- NAVBAR -->
-
     <header>
-
         <nav>
 
             <div class="left">
                 Rajan Portfolio
             </div>
 
-            <ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="about.htm" class="active-link">About</a></li>
-
                 <li><a href="services.html">Services</a></li>
-
                 <li><a href="projects.html">Projects</a></li>
-
                 <li><a href="contact.html">Contact</a></li>
-
             </ul>
 
         </nav>
-
     </header>
 
     <!-- ABOUT SECTION -->
-
     <section class="about-section">
 
         <div class="about-container">
@@ -366,15 +267,11 @@
             <div class="about-content">
 
                 <!-- IMAGE -->
-
                 <div class="about-image">
-
                     <img src="bg.png" alt="Rajan Profile">
-
                 </div>
 
                 <!-- TEXT -->
-
                 <div class="about-text">
 
                     <h1>About Me</h1>
@@ -408,61 +305,48 @@
             </div>
 
             <!-- SKILLS -->
-
             <div class="skills">
 
                 <h2>My Skills</h2>
 
                 <div class="skill">
-
                     <div class="skill-name">
                         <span>HTML</span>
                         <span>95%</span>
                     </div>
-
                     <div class="skill-bar">
                         <div class="skill-fill" data-width="95%"></div>
                     </div>
-
                 </div>
 
                 <div class="skill">
-
                     <div class="skill-name">
                         <span>CSS</span>
                         <span>90%</span>
                     </div>
-
                     <div class="skill-bar">
                         <div class="skill-fill" data-width="90%"></div>
                     </div>
-
                 </div>
 
                 <div class="skill">
-
                     <div class="skill-name">
                         <span>JavaScript</span>
                         <span>80%</span>
                     </div>
-
                     <div class="skill-bar">
                         <div class="skill-fill" data-width="80%"></div>
                     </div>
-
                 </div>
 
                 <div class="skill">
-
                     <div class="skill-name">
                         <span>Java</span>
                         <span>75%</span>
                     </div>
-
                     <div class="skill-bar">
                         <div class="skill-fill" data-width="75%"></div>
                     </div>
-
                 </div>
 
             </div>
@@ -472,112 +356,121 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer>
 
-        <div class="footer-content">
+        <div class="footer-container">
 
-            <h2>Rajan Portfolio</h2>
+            <div class="footer-box">
 
-            <p>
-                Frontend Developer | Web Designer | Java Learner
-            </p>
+                <h1 class="footer-logo">
+                    Rajan Portfolio
+                </h1>
 
-            <!-- SOCIAL -->
-
-            <div class="footer-social">
-
-                <a href="https://www.facebook.com/rajan.oli.75286" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-                <a href="https://www.instagram.com/rajan444706" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="https://www.youtube.com/@rajanolwee" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-
-                <a href="https://github.com" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-
-                <a href="https://tiktok.com/@rajanoli.spark1" target="_blank">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
+                <p class="footer-text">
+                    Frontend Developer | Web Designer | Java Learner
+                </p>
 
             </div>
 
-            <!-- LINKS -->
+            <div class="footer-box footer-links">
 
-            <div class="footer-links">
+                <h3>Quick Links</h3>
 
-                <a href="index.html">Home</a>
-
-                <a href="about.htm">About</a>
-
-                <a href="services.html">Services</a>
-
-                <a href="projects.html">Projects</a>
-
-                <a href="contact.html">Contact</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.htm">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
             </div>
 
-            <!-- COPYRIGHT -->
+            <div class="footer-box footer-social">
 
-            <div class="footer-bottom">
+                <h3>Follow Me</h3>
 
-                Copyright © 2026 Rajan Portfolio |
-                All Rights Reserved
+                <div class="social-icons">
+
+                    <a href="https://www.facebook.com/rajan.oli.75286" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/rajan444706" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@rajanolwee" target="_blank" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://tiktok.com/@rajanoli.spark1" target="_blank" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
+        <div class="footer-bottom">
+            &copy; 2026 Rajan Portfolio | All Rights Reserved
+        </div>
+
     </footer>
 
     <!-- JAVASCRIPT -->
-
     <script>
 
         // PAGE LOAD
-
-        window.addEventListener("load",()=>{
-
-            document.body.style.opacity="1";
-
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
         });
 
         // SKILL BAR ANIMATION
+        const skillFills = document.querySelectorAll(".skill-fill");
 
-        const skillFills =
-            document.querySelectorAll(".skill-fill");
-
-        window.addEventListener("load",()=>{
-
-            skillFills.forEach(fill=>{
-
-                fill.style.width =
-                    fill.getAttribute("data-width");
-
+        window.addEventListener("load", () => {
+            skillFills.forEach(fill => {
+                fill.style.width = fill.getAttribute("data-width");
             });
-
         });
 
         // NAVBAR SHADOW
-
-        window.addEventListener("scroll",function(){
-
-            const nav =
-                document.querySelector("nav");
-
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
             nav.style.boxShadow =
                 window.scrollY > 20
-                ? "0 0 20px rgb(170,107,228)"
-                : "none";
+                    ? "0 0 20px rgb(170,107,228)"
+                    : "none";
+        });
 
+        // HAMBURGER MENU
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("navMenu");
+        const navOverlay = document.getElementById("navOverlay");
+
+        function toggleMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("open");
+            navOverlay.classList.toggle("active");
+            document.body.style.overflow = navMenu.classList.contains("open") ? "hidden" : "";
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+        navOverlay.addEventListener("click", toggleMenu);
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (navMenu.classList.contains("open")) {
+                    toggleMenu();
+                }
+            });
         });
 
     </script>
